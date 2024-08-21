@@ -9,6 +9,11 @@ function addnotes(){
         let newlist=document.createElement("li");
         newlist.textContent=inputField.value.trim();
         notelist.appendChild(newlist);
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "checkbox";
+        let taskText = document.createElement("span");
+        taskText.textContent = inputvalue;
         let newdel=document.createElement("button");
         newdel.textContent="Delete";
         newdel.addEventListener("click",()=>{
@@ -16,7 +21,13 @@ function addnotes(){
 
         })
         
+        newlist.appendChild(checkbox);
+        newlist.appendChild(taskText);
         newlist.appendChild(newdel);
+
+        notelist.appendChild(newlist);
+
+        inputField.value = ""; 
 }
     
     
